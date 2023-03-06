@@ -226,7 +226,7 @@ miCamino.subiendoAlEverest.forEach((i) => {
   i.forEach((j) => {
     j.campoBase.forEach((campo) => {
       campo.campoI.campoII.campoIII.campoIV.forEach((palabra) => {
-        if(typeof palabra === "string" && palabra !== undefined && typeof palabra !== "object") mensaje = mensaje + ' ' + palabra 
+        if(typeof palabra === "string") mensaje = mensaje + ' ' + palabra 
       }
       );
     })
