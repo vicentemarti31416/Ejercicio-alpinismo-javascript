@@ -248,44 +248,31 @@ miCamino.subiendoAlEverest.forEach((i) => {
 
 //por ultimo como bonus,en un console.log mostraremos por pantalla las urls de todas las imagenes de los materiales y en otro haremos la media de la altitud de todas la cimas que hemos subido.
 
-miCamino.material.forEach((object) => {
-  object.imagenes.forEach((image) => {
-    for(let key in image) {
-      for(let url in image[key]) {
-        if(typeof image[key][url] === "string") direccion = image[key][url];
-        console.log(`La url de la montaña es "${direccion}"`)
-      }
-    }
-  })
-});
-
-let alturaTotal = 0;
-let contador = 0;
-miCamino.cimas.forEach((cima) => {
-  let altitudString = cima.altitud.toString().replace('.', '');
-  let altitudNumber = parseInt(altitudString);
-  alturaTotal += altitudNumber;
-  contador++;
-});
-console.log(`El número total de montañas es -> ${contador}`);
-console.log(`La suma de todas las alturas es -> ${alturaTotal}`)
-console.log(`La altura media de todas las montañas es -> ${alturaTotal / contador} metros`)
-
-
-/*
 let direccion = '';
-miCamino.cimas.forEach((cima) => {
-  miCamino.material.forEach((object) => {
-    object.imagenes.forEach((image) => {
+miCamino.material.forEach((item) => {
+    item.imagenes.forEach((image) => {
       for(let key in image) {
         for(let url in image[key]) {
           if(typeof image[key][url] === "string") direccion = image[key][url];
         }
       }
+      console.log(`La url del item ${item.nombre} es "${direccion}"`)
     })
-  });
-  console.log(`La url de la montaña ${cima.nombre} es "${direccion}"`)
-  //console.log(`La url de la imagen de la montaña ${cima.nombre} es ${object.imagenes}`)
 })
-*/
+
+let alturaTotal = 0;
+let contador = 0;
+miCamino.cimas.forEach((cima) => {
+  let altitudString = cima.altitud.toString().replace('.', ''); '8654'
+  let altitudNumber = parseInt(altitudString);
+  alturaTotal += altitudNumber;
+  contador++;
+});
+
+console.log(`El número total de montañas es -> ${contador}`);
+console.log(`La suma de todas las alturas es -> ${alturaTotal}`)
+console.log(`La altura media de todas las montañas es -> ${Math.round(alturaTotal / contador)} metros`)
+
+
+
 
